@@ -6,12 +6,10 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 import 'package:genui/genui.dart';
-import 'package:genui_firebase_ai/genui_firebase_ai.dart';
 import 'package:genui_google_generative_ai/genui_google_generative_ai.dart';
 
 import 'asset_images.dart';
 import 'catalog.dart';
-import 'config/configuration.dart';
 // Conditionally import non-web version so we can read from shell env vars in
 // non-web version.
 import 'config/io_get_api_key.dart'
@@ -36,16 +34,9 @@ Future<void> loadImagesJson() async {
 /// generated UI, and a menu to switch between different AI models.
 class TravelPlannerPage extends StatefulWidget {
   /// Creates a new [TravelPlannerPage].
-  ///
-  /// An optional [contentGenerator] can be provided, which is useful for
-  /// testing or using a custom AI client implementation. If not provided, a
-  /// default [FirebaseAiContentGenerator] is created.
   const TravelPlannerPage({this.contentGenerator, super.key});
 
   /// The AI client to use for the application.
-  ///
-  /// If null, a default instance of [FirebaseAiContentGenerator] will be
-  /// created within the page's state.
   final ContentGenerator? contentGenerator;
 
   @override
@@ -70,30 +61,15 @@ class _TravelPlannerPageState extends State<TravelPlannerPage>
       _handleUserMessageFromUi,
     );
 
-    // Create the appropriate content generator based on configuration
     final ContentGenerator contentGenerator =
-        widget.contentGenerator ??
-        switch (aiBackend) {
-          AiBackend.googleGenerativeAi => () {
-            return GoogleGenerativeAiContentGenerator(
-              catalog: travelAppCatalog,
-              systemInstruction: prompt,
-              additionalTools: [
-                ListHotelsTool(
-                  onListHotels: BookingService.instance.listHotels,
-                ),
-              ],
-              apiKey: getApiKey(),
-            );
-          }(),
-          AiBackend.firebase => FirebaseAiContentGenerator(
-            catalog: travelAppCatalog,
-            systemInstruction: prompt,
-            additionalTools: [
-              ListHotelsTool(onListHotels: BookingService.instance.listHotels),
-            ],
-          ),
-        };
+        GoogleGenerativeAiContentGenerator(
+          catalog: travelAppCatalog,
+          systemInstruction: prompt,
+          additionalTools: [
+            ListHotelsTool(onListHotels: BookingService.instance.listHotels),
+          ],
+          apiKey: getApiKey(),
+        );
 
     _uiConversation = GenUiConversation(
       a2uiMessageProcessor: a2uiMessageProcessor,

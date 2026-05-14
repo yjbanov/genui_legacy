@@ -4,44 +4,20 @@
 
 import 'dart:async';
 
-import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:genui/genui.dart';
-import 'package:genui_firebase_ai/genui_firebase_ai.dart';
 import 'package:genui_google_generative_ai/genui_google_generative_ai.dart';
 import 'package:logging/logging.dart';
-
-// If you want to convert to using Firebase AI, run:
-//
-//   sh tool/refresh_firebase.sh <project_id>
-//
-// to refresh the Firebase configuration for a specific Firebase project.
-// and uncomment the Firebase initialization code and import below that is
-// marked with UNCOMMENT_FOR_FIREBASE, and set the value of `aiBackend` to
-// `AiBackend.firebase` in `lib/configuration.dart`.
-
-// import 'firebase_options.dart'; // UNCOMMENT_FOR_FIREBASE
 
 // Conditionally import non-web version so we can read from shell env vars in
 // non-web version.
 import 'api_key/io_get_api_key.dart'
     if (dart.library.html) 'api_key/web_get_api_key.dart';
-import 'configuration.dart';
 import 'message.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-
-  // Only initialize Firebase if we are using the Firebase backend.
-  if (aiBackend == AiBackend.firebase) {
-    await Firebase.initializeApp(
-      // UNCOMMENT_FOR_FIREBASE (See top of file for details)
-      // options: DefaultFirebaseOptions.currentPlatform,
-    );
-  }
-
   configureGenUiLogging(level: Level.ALL);
-
   runApp(const MyApp());
 }
 
@@ -91,20 +67,12 @@ existing `surfaceId`s. Each UI response must be in its own new surface.
 
 ${GenUiPromptFragments.basicChat}''';
 
-    // Create the appropriate content generator based on configuration
-    final ContentGenerator contentGenerator = switch (aiBackend) {
-      AiBackend.googleGenerativeAi => () {
-        return GoogleGenerativeAiContentGenerator(
+    final ContentGenerator contentGenerator =
+        GoogleGenerativeAiContentGenerator(
           catalog: catalog,
           systemInstruction: systemInstruction,
           apiKey: getApiKey(),
         );
-      }(),
-      AiBackend.firebase => FirebaseAiContentGenerator(
-        catalog: catalog,
-        systemInstruction: systemInstruction,
-      ),
-    };
 
     _genUiConversation = GenUiConversation(
       a2uiMessageProcessor: _a2uiMessageProcessor,
@@ -139,10 +107,7 @@ ${GenUiPromptFragments.basicChat}''';
 
   @override
   Widget build(BuildContext context) {
-    final String title = switch (aiBackend) {
-      AiBackend.googleGenerativeAi => 'Chat with Google Generative AI',
-      AiBackend.firebase => 'Chat with Firebase AI',
-    };
+    final title = 'Chat with Google Generative AI';
 
     return Scaffold(
       appBar: AppBar(title: Text(title)),

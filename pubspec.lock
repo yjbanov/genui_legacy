@@ -386,6 +386,14 @@ packages:
     description: flutter
     source: sdk
     version: "0.0.0"
+  genui_firebase_ai:
+    dependency: transitive
+    description:
+      name: genui_firebase_ai
+      sha256: e3f42ba71276b814d6a7d111f2dd0007e6697dbd9e15b7171431ae3da2d27fd4
+      url: "https://pub.dev"
+    source: hosted
+    version: "0.6.1"
   glob:
     dependency: transitive
     description:

@@ -17,11 +17,9 @@ workspace:
   - packages/genui
   - packages/genui_dartantic
   - packages/genui_dartantic/example
-  - packages/genui_firebase_ai
   - packages/genui_google_generative_ai
   - packages/json_schema_builder
   - tool/fix_copyright
-  - tool/release
   - tool/test_and_fix
 
 flutter:

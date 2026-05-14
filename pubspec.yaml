@@ -15,8 +15,6 @@ workspace:
   - examples/simple_chat
   - examples/travel_app
   - packages/genui
-  - packages/genui_dartantic
-  - packages/genui_dartantic/example
   - packages/genui_google_generative_ai
   - packages/json_schema_builder
   - tool/fix_copyright

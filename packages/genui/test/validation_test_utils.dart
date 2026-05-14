@@ -5,13 +5,13 @@
 import 'dart:convert';
 
 import 'package:flutter_test/flutter_test.dart';
+import 'package:genui/json_schema_builder.dart';
 import 'package:genui/src/model/a2ui_message.dart';
 import 'package:genui/src/model/a2ui_schemas.dart';
 import 'package:genui/src/model/catalog.dart';
 import 'package:genui/src/model/catalog_item.dart';
 import 'package:genui/src/model/ui_models.dart';
 import 'package:genui/src/primitives/simple_items.dart';
-import 'package:json_schema_builder/json_schema_builder.dart';
 
 /// Validates the examples in the catalog items in the catalog.
 void validateCatalogExamples(

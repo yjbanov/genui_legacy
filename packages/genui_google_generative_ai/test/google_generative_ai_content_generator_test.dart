@@ -6,11 +6,11 @@ import 'dart:async';
 
 import 'package:flutter_test/flutter_test.dart';
 import 'package:genui/genui.dart' as genui;
+import 'package:genui/json_schema_builder.dart' as dsb;
 import 'package:genui_google_generative_ai/genui_google_generative_ai.dart';
 import 'package:google_cloud_ai_generativelanguage_v1beta/generativelanguage.dart'
     as google_ai;
 import 'package:google_cloud_protobuf/protobuf.dart' as protobuf;
-import 'package:json_schema_builder/json_schema_builder.dart' as dsb;
 
 void main() {
   group('GoogleGenerativeAiContentGenerator', () {

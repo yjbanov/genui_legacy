@@ -62,6 +62,7 @@ class _TravelPlannerPageState extends State<TravelPlannerPage>
     );
 
     final ContentGenerator contentGenerator =
+        widget.contentGenerator ??
         GoogleGenerativeAiContentGenerator(
           catalog: travelAppCatalog,
           systemInstruction: prompt,

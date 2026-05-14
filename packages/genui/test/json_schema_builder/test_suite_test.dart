@@ -5,16 +5,18 @@
 import 'dart:convert';
 import 'dart:io';
 
-import 'package:json_schema_builder/json_schema_builder.dart';
-import 'package:json_schema_builder/src/logging_context.dart';
-import 'package:json_schema_builder/src/schema_registry.dart';
+import 'package:genui/json_schema_builder.dart';
+import 'package:genui/src/json_schema_builder/logging_context.dart';
+import 'package:genui/src/json_schema_builder/schema_registry.dart';
 import 'package:test/test.dart';
 
 void main() {
   final testSuiteDir = Directory(
-    'submodules/JSON-Schema-Test-Suite/tests/draft2020-12',
+    '../json_schema_builder/submodules/JSON-Schema-Test-Suite/tests/draft2020-12',
   );
-  final remoteDir = Directory('submodules/JSON-Schema-Test-Suite/remotes');
+  final remoteDir = Directory(
+    '../json_schema_builder/submodules/JSON-Schema-Test-Suite/remotes',
+  );
 
   // Optional tests are not required to pass for full compliance.
   final optionalTestSuiteDir = Directory('${testSuiteDir.path}/optional');

@@ -4,12 +4,12 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
+import 'package:genui/json_schema_builder.dart';
 import 'package:genui/src/core/ui_tools.dart';
 import 'package:genui/src/model/a2ui_message.dart';
 import 'package:genui/src/model/catalog.dart';
 import 'package:genui/src/model/catalog_item.dart';
 import 'package:genui/src/model/tools.dart';
-import 'package:json_schema_builder/json_schema_builder.dart';
 
 void main() {
   group('$SurfaceUpdateTool', () {

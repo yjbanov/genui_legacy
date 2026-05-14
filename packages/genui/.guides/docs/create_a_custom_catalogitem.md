@@ -24,7 +24,7 @@ Each catalog item needs a schema that defines the data required to populate it.
 Using the `json_schema_builder` package, define one for the new widget.
 
 ```dart
-import 'package:json_schema_builder/json_schema_builder.dart';
+import 'package:genui/json_schema_builder.dart';
 import 'package:flutter/material.dart';
 import 'package:genui/genui.dart';
 

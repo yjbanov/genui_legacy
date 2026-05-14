@@ -2,7 +2,7 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import 'package:json_schema_builder/json_schema_builder.dart';
+import '../../json_schema_builder.dart';
 
 import '../model/a2ui_message.dart';
 import '../model/a2ui_schemas.dart';

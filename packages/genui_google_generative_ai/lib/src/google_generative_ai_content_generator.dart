@@ -7,10 +7,10 @@ import 'dart:convert';
 
 import 'package:flutter/foundation.dart';
 import 'package:genui/genui.dart';
+import 'package:genui/json_schema_builder.dart' as dsb;
 import 'package:google_cloud_ai_generativelanguage_v1beta/generativelanguage.dart'
     as google_ai;
 import 'package:google_cloud_protobuf/protobuf.dart' as protobuf;
-import 'package:json_schema_builder/json_schema_builder.dart' as dsb;
 
 import 'google_content_converter.dart';
 import 'google_generative_service_interface.dart';

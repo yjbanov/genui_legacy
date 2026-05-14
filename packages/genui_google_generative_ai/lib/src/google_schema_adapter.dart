@@ -2,9 +2,9 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
+import 'package:genui/json_schema_builder.dart' as dsb;
 import 'package:google_cloud_ai_generativelanguage_v1beta/generativelanguage.dart'
     as google_ai;
-import 'package:json_schema_builder/json_schema_builder.dart' as dsb;
 
 /// An error that occurred during schema adaptation.
 ///

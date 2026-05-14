@@ -4,7 +4,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter_markdown_plus/flutter_markdown_plus.dart';
-import 'package:json_schema_builder/json_schema_builder.dart';
+import '../../../json_schema_builder.dart';
 
 import '../../core/widget_utilities.dart';
 import '../../model/a2ui_schemas.dart';

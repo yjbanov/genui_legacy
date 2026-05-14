@@ -3,8 +3,8 @@
 // found in the LICENSE file.
 
 import 'package:flutter_test/flutter_test.dart';
+import 'package:genui/json_schema_builder.dart';
 import 'package:genui/src/model/tools.dart';
-import 'package:json_schema_builder/json_schema_builder.dart';
 
 void main() {
   group('AiTool', () {

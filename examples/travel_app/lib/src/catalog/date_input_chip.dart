@@ -6,8 +6,8 @@
 
 import 'package:flutter/material.dart';
 import 'package:genui/genui.dart';
+import 'package:genui/json_schema_builder.dart';
 import 'package:intl/intl.dart';
-import 'package:json_schema_builder/json_schema_builder.dart';
 
 final _schema = S.object(
   properties: {

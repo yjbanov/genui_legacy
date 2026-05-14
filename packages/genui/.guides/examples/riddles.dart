@@ -6,7 +6,7 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:genui/genui.dart';
 import 'package:genui_firebase_ai/genui_firebase_ai.dart';
-import 'package:json_schema_builder/json_schema_builder.dart';
+import 'package:genui/json_schema_builder.dart';
 import 'package:logging/logging.dart';
 
 import 'firebase_options.dart';

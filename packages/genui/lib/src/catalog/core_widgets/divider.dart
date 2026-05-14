@@ -3,7 +3,7 @@
 // found in the LICENSE file.
 
 import 'package:flutter/material.dart';
-import 'package:json_schema_builder/json_schema_builder.dart';
+import '../../../json_schema_builder.dart';
 
 import '../../model/catalog_item.dart';
 import '../../primitives/simple_items.dart';

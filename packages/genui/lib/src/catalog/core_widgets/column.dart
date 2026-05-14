@@ -4,7 +4,7 @@
 
 import 'package:flutter/material.dart';
 // ignore_for_file: avoid_dynamic_calls
-import 'package:json_schema_builder/json_schema_builder.dart';
+import '../../../json_schema_builder.dart';
 
 import '../../model/a2ui_schemas.dart';
 import '../../model/catalog_item.dart';

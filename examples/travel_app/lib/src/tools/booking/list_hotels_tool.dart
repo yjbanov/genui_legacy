@@ -3,7 +3,7 @@
 // found in the LICENSE file.
 
 import 'package:genui/genui.dart';
-import 'package:json_schema_builder/json_schema_builder.dart';
+import 'package:genui/json_schema_builder.dart';
 
 import 'model.dart';
 

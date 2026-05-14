@@ -5,11 +5,11 @@
 import 'dart:convert';
 import 'dart:io';
 
+import 'package:genui/src/json_schema_builder/exceptions.dart';
+import 'package:genui/src/json_schema_builder/logging_context.dart';
+import 'package:genui/src/json_schema_builder/schema/schema.dart';
+import 'package:genui/src/json_schema_builder/schema_cache.dart';
 import 'package:http/http.dart' as http;
-import 'package:json_schema_builder/src/exceptions.dart';
-import 'package:json_schema_builder/src/logging_context.dart';
-import 'package:json_schema_builder/src/schema/schema.dart';
-import 'package:json_schema_builder/src/schema_cache.dart';
 import 'package:mockito/annotations.dart';
 import 'package:mockito/mockito.dart';
 import 'package:test/test.dart';

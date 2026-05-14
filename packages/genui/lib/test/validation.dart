@@ -4,7 +4,7 @@
 
 import 'dart:convert';
 
-import 'package:json_schema_builder/json_schema_builder.dart';
+import '../json_schema_builder.dart';
 
 import '../src/model/a2ui_message.dart';
 import '../src/model/a2ui_schemas.dart';

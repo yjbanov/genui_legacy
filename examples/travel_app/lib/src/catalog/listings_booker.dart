@@ -6,8 +6,8 @@ import 'dart:convert';
 
 import 'package:flutter/material.dart';
 import 'package:genui/genui.dart';
+import 'package:genui/json_schema_builder.dart';
 import 'package:intl/intl.dart';
-import 'package:json_schema_builder/json_schema_builder.dart';
 
 import '../tools/booking/booking_service.dart';
 import '../tools/booking/model.dart';
